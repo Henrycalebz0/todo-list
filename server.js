@@ -113,7 +113,15 @@ function serveStatic(req, res, url) {
   }
   fs.readFile(filePath, (error, content) => {
     if (error) { res.writeHead(404); return res.end('Not found'); }
-    const type = filePath.endsWith('.css') ? 'text/css' : filePath.endsWith('.js') ? 'text/javascript' : 'text/html';
+    const types = {
+      '.html': 'text/html',
+      '.css': 'text/css',
+      '.js': 'text/javascript',
+      '.svg': 'image/svg+xml',
+      '.png': 'image/png',
+      '.ico': 'image/x-icon'
+    };
+    const type = types[path.extname(filePath).toLowerCase()] || 'application/octet-stream';
     res.writeHead(200, { 'Content-Type': `${type}; charset=utf-8` });
     res.end(content);
   });
