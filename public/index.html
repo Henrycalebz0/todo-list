@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">YOUR DAY, IN FOCUS</p>
+    <h1>Todo list</h1>
+    <p class="intro">Small steps add up. What would you like to do?</p>
+    <form id="todo-form">
+      <label class="sr-only" for="todo-title">New task</label>
+      <input id="todo-title" name="title" maxlength="200" placeholder="Add a task…" required>
+      <button type="submit">Add task</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <ul id="todo-list" aria-label="Tasks"></ul>
+    <footer><span id="remaining">0 tasks left</span><button id="clear-completed" class="text-button" type="button">Clear completed</button></footer>
+  </main>
+</body>
+</html>

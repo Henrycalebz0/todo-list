@@ -1,0 +1,12 @@
+{
+  "name": "todo-list-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small todo list app using Node.js built-in modules",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
